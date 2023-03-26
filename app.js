@@ -81,6 +81,7 @@ app.post("/failure", function (req, res) {
 });
 
 
-app.listen(process.env.PORT, function () {
+// default port for local hosting : 3000
+app.listen(process.env.PORT || 3000, function () {
     console.log('Server is running on port ' + process.env.PORT);
 });
