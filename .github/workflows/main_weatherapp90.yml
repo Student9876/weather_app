@@ -21,21 +21,17 @@ jobs:
               with:
                   node-version: "18.x"
 
-             - name: Run install
-              uses: borales/actions-yarn@v4
-              with:
-                cmd: install
-            # - name: npm install, build, and test
-            #   run: |
-            #       npm install
-            #       npm run build --if-present
-            #       npm run test --if-present
-
-            - name: Upload artifact for deployment job
-              uses: actions/upload-artifact@v3
-              with:
-                  name: node-app
-                  path: .
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
+      
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: node-app
+          path: .
 
     deploy:
         runs-on: ubuntu-latest
