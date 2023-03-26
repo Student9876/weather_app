@@ -1,3 +1,6 @@
+# editor 
+
+
 # local env files
 .env*
 .env.local
@@ -8,6 +11,8 @@
 
 # local bootstrap files 
 bootstrap-offline/
+
+.vscode/
 
 
 
