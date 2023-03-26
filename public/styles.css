@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #FFEAEA;
+}
+
+.weatherImage{
+    width: 11rem;
+    height: 11rem;
+}
+
+#formDivision {
+    margin: auto;
+    padding: 0 4rem;
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+}
+
+#cityLabel {
+    font-family: 'Libre Baskerville', serif;
+}
+
+#btn-xl{
+    padding: 7px 80px;
+}
