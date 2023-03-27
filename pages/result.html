@@ -11,6 +11,22 @@
         <div class="jumbotron">
             <h1 class="display-4">Weather report!</h1>
             <hr class="my-4">
+            <h2>`+place+`</h2> (latitude- , longitude-)
+
+            <p>The temperature in <strong>` +
+                query +
+                `</strong> is <em><u> ` +
+                temp +
+                `</u></em> degrees Celcius.</p> <p>The weather is currently <strong>` +
+                weatherDescription +
+                `</strong></p>
+            <img src="` +
+                iconUrl +
+                `" width="70" height="70"> </div >
+            <form action="/re" method="post">
+                <button class="btn btn-lg btn-primary" type="submit"
+                    name="button">Start again </button>
+            </form>
         </div>
     </body>
 </html>
