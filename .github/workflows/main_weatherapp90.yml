@@ -12,16 +12,26 @@ on:
 jobs:
     build:
         runs-on: windows-latest
-
         steps:
-            - uses: actions/checkout@v3
+            - name: Checkout the repo
+              uses: actions/checkout@v3
 
             - name: Set up Node.js version
               uses: actions/setup-node@v3
               with:
                   node-version: "18.x"
 
-            - name: Run install
+            - name: Cache node modules
+              id: cache-node-modules
+              uses: actions/cache@v3
+              with:
+                  path: ./node_modules
+                  key: weather-${{ hashFiles('**/package.json', '**/yarn.lock') }}
+                  restore-keys: |
+                      weather-
+
+            - if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
+              name: Install node modules
               uses: borales/actions-yarn@v4
               with:
                   cmd: install
