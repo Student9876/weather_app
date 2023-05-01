@@ -1,3 +1,11 @@
 body {
     background-color: aliceblue;
 }
+
+td{
+  padding: 0.5rem 1rem;  
+}
+
+.contentHead {
+    font-weight:bold;
+}
