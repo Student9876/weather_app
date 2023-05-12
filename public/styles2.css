@@ -2,10 +2,49 @@ body {
     background-color: aliceblue;
 }
 
+/* Tables Styles  */
+.resultTable {
+  font-size: 2.5rem;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
 td{
   padding: 0.5rem 1rem;  
 }
 
+
+/* button */
+.btn-primary{
+  border-color: #BDCDD6;
+  background-color: #BDCDD6;
+  color: black;
+}
+
+
+/* Weather Icon  */
+.weatherIcon {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 0 2rem 0;
+}
+
+
 .contentHead {
     font-weight:bold;
+}
+
+
+@media (max-width:900px){
+  .resultTable {
+    font-size: 2rem;
+  }
+}
+@media (max-width:700px){
+  .resultTable {
+    font-size: 1rem;
+  }
 }

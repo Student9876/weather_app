@@ -41,43 +41,6 @@ app.post("/", function (req, res) {
                 const iconUrl =
                     "http://openweathermap.org/img/wn/" + icon + ".png"
 
-                // res.write(
-                //     `
-                //     <!DOCTYPE html>
-                //     <html lang="en">
-                //         <head>
-                //             <meta charset="UTF-8">
-                //             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                //             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                //             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-                //             <title>Result</title>
-                //         </head>
-                //         <body>
-                //             <div class="jumbotron">
-                //                 <h1 class="display-4">Weather report!</h1>
-                //                 <hr class="my-4">
-                //                 <h2>`+ place + `</h2> (latitude- ` + lat + `, longitude- ` + lon + `)
-                    
-                //                 <p>The temperature in <strong>` +
-                //     query +
-                //     `</strong> is <em><u> ` +
-                //     temp +
-                //     `</u></em> degrees Celcius.</p> <p>The weather is currently <strong>` +
-                //     weatherDescription +
-                //     `</strong></p>
-                //                 <img src="` +
-                //     iconUrl +
-                //     `" width="70" height="70"> </div >
-                //                 <form action="/re" method="post">
-                //                     <button class="btn btn-lg btn-primary" type="submit"
-                //                         name="button">Start again </button>
-                //                 </form>
-                //             </div>
-                //         </body>
-                //     </html>`
-                // )
-                // res.send()
-
 
                 res.render("result", {
                     place: place,
@@ -87,11 +50,6 @@ app.post("/", function (req, res) {
                     description: weatherDescription,
                     iconUrl: iconUrl
                 })
-                // We can have multiple "res.write" is a single app method
-                // res.write("<div class=" + "jumbotron>" + "<h1 class=" + "display-4>" + "Weather report!</h1>" + "<hr class=" + "my-4>");
-                // res.write(" <p>The temperature in " + query + " is " + temp + " degrees Celcius.</p>");
-                // res.write("<p>The weather is currently " + weatherDescription + "</p>" + "<img src=" + iconUrl + " width=" + 70 + " height=" + 70 + ">" + " </div>");
-                // res.send();
             })
         } else {
             res.render('failure')

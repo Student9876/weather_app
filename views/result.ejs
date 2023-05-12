@@ -10,6 +10,7 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous">
         <link rel="stylesheet" href="styles2.css">
+        <!-- <link rel="stylesheet" href="\public\styles2.css"> -->
         <title>Result</title>
     </head>
     <body>
@@ -17,18 +18,28 @@
             <div class="jumbotron">
                 <h1 class="display-4">Weather report!</h1>
                 <hr class="my-4">
-
-                <table>
+                <img class="weatherIcon" src="<%=iconUrl%>"
+                width="70" height="70">
+                
+                <table class="resultTable" border="5">
                     <tr>
                         <td class="contentHead">Place</td>
                         <td><%= place%></td>
                         </tr>
                         <tr>
                             <td class="contentHead">
-                                (latitude , longitude)
+                                Latitude
                             </td>
                             <td>
-                                (<%= latitude %>, <%=longitude %>)
+                                <%= latitude %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="contentHead">
+                                        Longitude
+                                    </td>
+                                    <td>
+                                        <%=longitude %>
                                     </td>
                                 </tr>
                                 <tr>
@@ -46,13 +57,8 @@
                                         </td>
                                         <td> <%= description %> </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="<%=iconUrl%>"
-                                                width="70" height="70"> </div>
-                                        </td>
-                                    </tr>
                                 </table>
+                                <br>
                                 <form action="/re" method="post">
                                     <button class="btn btn-lg btn-primary"
                                         type="submit"
